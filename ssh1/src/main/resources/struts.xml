@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<!-- 禁止缓存 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<constant name="struts.devMode" value="false"/>
+	<constant name="struts.action.extension" value="action,do,," />
+	<!-- <constant name="struts.multipart.saveDir" value="/img"></constant> -->
+	<!-- 由spring 管理action的创建 -->
+	<constant name="struts.objectFactory" value="spring" />
+ 
+
+	<package name="default" extends="json-default">
+
+	<!--  -->
+	
+		<action name="first_*" class="com.lana.action.FirstAction"
+			method="{1}">
+			<result name="index">/index.jsp</result>
+			<result name="open" type="json">
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+			</result>
+			<result name="index111">/index11.jsp</result>
+			<result name="pushdata" type="json">
+				<!-- <param name="root">data</param> -->
+				<!-- <param name="includeProperties">data.*</param> -->
+			</result>
+			<result name="read" type="json"></result>
+		</action>
+	
+	
+	<!--读数据  -->
+		<action name="read_*" class="com.lana.action.ReadAction"
+			method="{1}">
+			<result type="json" name="readVersion"></result>
+			<result name="send">/send.jsp</result>
+			<result name="read" type="json"></result>
+			<result name="currentTime">/read.jsp</result>
+			<result name="tabdata" type="json"></result>
+			<result name="readUser">/jsp/lookUser.jsp</result>
+			 <result name="deleteUser">/jsp/lookUser.jsp</result>
+			  <result name="deleteUser">/jsp/lookUser.jsp</result>
+			 <result name="readtime">/WEB-INF/jsp/readtime.jsp</result>
+			 <result name="readrecord">/WEB-INF/jsp/lookrecord.jsp</result>
+			 <result name="real">/jsp/realtime.jsp</result>
+			 
+		</action>
+	
+	
+	
+		<!--添加权限 -->
+		              <action name="perssion_*"  class="com.lana.action.PersionAction"
+		              	method="{1}">
+			              <result name="addUser">/jsp/user.jsp</result>
+                            <result name="addperssion" >/jsp/addPerssion.jsp</result>          
+                            <result name="getAllpersion" type="json"></result>
+                           <result name="lookpersion">/jsp/lookPerssion.jsp</result>
+           
+		         </action>
+ 
+                  <action name="lock_*" class="com.lana.action.OtherAction" method="{1}">
+
+                     <result name="lock">/WEB-INF/jsp/lock.jsp</result>
+
+                    <result name="time">/WEB-INF/jsp/times.jsp</result>
+                     <result name="readpara" type="json"></result>
+                    <result name="delete">/WEB-INF/jsp/lookrecord.jsp</result>
+                     </action>
+
+	     </package>
+</struts>

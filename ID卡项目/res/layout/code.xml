@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/layout_login_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="#000084" >
+      <ImageView 
+          android:id="@+id/back"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/flight_title_back_normal"
+          android:layout_centerVertical="true"
+          />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="二维码"
+            android:id="@+id/erweima"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
+        
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_login_topbar"
+        
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="#FFFFFF"
+            android:layout_height="250dp" >
+
+            <ImageView
+                android:id="@+id/iv_two_code"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal" />
+
+         <!--    <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_two_code"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/left" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/iv_two_code"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/pic_bottom" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/right" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/top" /> -->
+        </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/grun"
+        android:orientation="horizontal" >
+       
+        <Button 
+              android:id="@+id/model"
+             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="模式一"
+            android:layout_marginLeft="20dp"
+            android:textColor="#FFFFFF" 
+            
+            android:background="@null"
+            />
+        
+          <Button 
+            android:id="@+id/shared"
+           android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分享"
+            android:layout_marginLeft="150dp"
+             android:textColor="#FFFFFF" 
+            android:background="@null"
+            />
+        
+            </LinearLayout>
+           <ImageView 
+                
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:background="@drawable/bottom"
+               android:layout_gravity="center_horizontal" 
+               /> 
+    </LinearLayout>
+
+</RelativeLayout>
